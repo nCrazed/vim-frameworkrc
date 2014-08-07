@@ -1,0 +1,69 @@
+*frameworkrc.txt*                  Manage your framework specific vim settings.
+
+                           Vim Frameworkrc
+
+
+Author:            Edvin Malinovskis <github@edvin.io>
+Plugin Homepage:   <https://github.com/nCrazed/vim-frameworkrc>
+
+===============================================================================
+CONTENTS                                                  *FrameworkrcContents*
+
+  1.  Introduction ................. |FrameworkrcIntroduction|
+  2.  Installation ................. |FrameworkrcInstallation|
+  3.  Usage ........................ |FrameworkrcUsage|
+  4.  Commands ..................... |FrameworkrcCommands|
+  5.  FAQ .......................... |FrameworkrcFAQ|
+
+===============================================================================
+1. INTRODUCTION                                       *FrameworkrcIntroduction*
+                                                                  *Frameworkrc*
+
+Vim Frameworkrc is a Vim plugin which helps you manage your framework or even 
+project specific settings.
+
+===============================================================================
+2. INSTALLATION                                       *FrameworkrcInstallation*
+
+If you don't have a preferred installation method, I recommend installing
+pathogen.vim, and then simply copy and paste:
+>
+  cd ~/.vim/bundle
+  git clone git://github.com/nCrazed/vim-frameworkrc.git
+<
+
+===============================================================================
+3. USAGE                                                     *FrameworkrcUsage*
+
+Define your settings files in plugin's configs directory as 
+<project-or-framework-name>.vim then in your project's root create a file
+called .frameworkrc that contains <project-or-framework-name> on the first line
+
+===============================================================================
+5. CUSTOMISATION                                     *FrameworkrcCustomisation*
+
+You can customise:
+
+- The name of the file to be created in project root directory
+- The location of the framework configs directory
+
+To customise the file name, add the following to your |vimrc|:
+>
+  let g:FrameworkrcFile = 'custom-file-name'
+<
+It is probably a good idea to add this file (or the default |.frameworkrc| to
+your global ignorefiles.
+
+To customise the configs directory location, ass the following to your |vimrc|:
+>
+  let g:FrameworkrcConfigDir = 'path-to-configs-dir-with-trailing-slash/'
+<
+
+===============================================================================
+6. FAQ                                                         *FrameworkrcFAQ*
+
+Not that I've head any questions so far but I expect at least a. to come up:
+
+a. Why not simply use |set exrc| and |set secure|?
+
+  I'll let `phen` answer this one: http://stackoverflow.com/a/3164830/3784306
