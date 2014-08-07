@@ -34,20 +34,21 @@ nmap <leader>lc :e composer.json<cr>
 
 " Prepare a new PHP class
 function! Class()
-let name = input('Class name? ')
-let namespace = input('Any Namespace? ')
- 
-if strlen(namespace)
-exec 'normal i<?php namespace ' . namespace . ';
-else
-exec 'normal i<?php
-endif
- 
-" Open class
-exec 'normal iclass ' . name . ' {^M}^[O^['
-exec 'normal i^M public function __construct()^M{^M ^M}^['
+    let name = input('Class name? ')
+    let namespace = input('Any Namespace? ')
+
+    if strlen(namespace)
+        exec 'normal i<?php namespace ' . namespace . ';
+    else
+        exec 'normal i<?php
+    endif
+
+    " Open class
+    exec 'normal iclass ' . name . ' {^M}^[O^['
+    
+    exec 'normal i^M    public function __construct()^M{^M ^M}^['
 endfunction
-nmap ,1 :call Class()<cr>
+nmap ,1  :call Class()<cr>
 ```
 
 Now create a `.frameworkrc` file in your laravel project's root directory:
