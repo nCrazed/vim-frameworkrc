@@ -25,7 +25,7 @@ function! FrameworkrcLoadFramework()"{{{
         if (len(file) < 1)
             echo g:FrameworkrcFile.' file is empty!'
         else
-            let filename = file[0]
+            let filename = file[0].'.vim'
             let full_path = g:FrameworkrcConfigDir.filename
             if filereadable(full_path)
                 execute "source " . full_path
