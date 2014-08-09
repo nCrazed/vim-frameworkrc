@@ -4,7 +4,7 @@
 
 " Location for different framework configs
 if !exists('g:FrameworkrcConfigDir')"{{{
-    let g:FrameworkrcConfigDir = fnamemodify('configs/', '%:p')
+	let g:FrameworkrcConfigDir = expand("$HOME/.vim/configs/")
 endif"}}}
 
 " Create the config dir if it doesn't already exist
